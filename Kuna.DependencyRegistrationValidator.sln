@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kuna.DependencyRegistrationValidator", "src\Kuna.DependencyRegistrationValidator.csproj", "{0AD43C82-F9F0-4FE1-9ED4-D315E4D3CE1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0D6A197B-AE9F-4D02-AB8F-A10475866A58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AD43C82-F9F0-4FE1-9ED4-D315E4D3CE1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AD43C82-F9F0-4FE1-9ED4-D315E4D3CE1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AD43C82-F9F0-4FE1-9ED4-D315E4D3CE1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AD43C82-F9F0-4FE1-9ED4-D315E4D3CE1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0AD43C82-F9F0-4FE1-9ED4-D315E4D3CE1D} = {0D6A197B-AE9F-4D02-AB8F-A10475866A58}
+	EndGlobalSection
+EndGlobal

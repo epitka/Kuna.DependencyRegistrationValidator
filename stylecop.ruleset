@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Rules for StyleCop.Analyzers" Description="Code analysis rules for StyleCop.Analyzers.csproj." ToolsVersion="15.0">
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <Rule Id="SA0001" Action="None"/>
+    <Rule Id="SA1200" Action="None"/>
+	<Rule Id="SA1600" Action="None"/>
+    <Rule Id="SA1633" Action="None"/>
+    <Rule Id="CS1591" Action="None"/>
+	<Rule Id="SA1623" Action="None"/>
+	<Rule Id="SA1624" Action="None"/>
+	<Rule Id="SA1642" Action="None"/>
+    <Rule Id="SA1118" Action="None"/>
+	<Rule Id="SA1602" Action="None"/>
+	<Rule Id="CS0618" Action="None"/>
+  </Rules>
+
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers.ReadabilityRules">
+    <Rule Id="SA1117" Action="None"/> <!-- Parameters should all be placed on the same line, or each on its own line -->
+  </Rules>
+
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers.MaintainabilityRules">
+    <Rule Id="SA1414" Action="Error"/> <!-- Tuple types appearing in member declarations should have explicitly named tuple elements -->
+  </Rules>
+</RuleSet>
