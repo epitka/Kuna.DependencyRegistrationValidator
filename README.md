@@ -16,14 +16,13 @@ Install the [Nuget Package](https://www.nuget.org/packages/Kuna.Extensions.Depen
 
 ### Usage
 
-This library allows you to scan assemblies and verify that all dependencies needed to instantiate types are registered with container. It has been tested only with Microsoft's base container implementation.
+This library allows you to scan assemblies and verify that all dependencies required for the instantiation of types are registered with the dependency injection container. It has been tested exclusively with the base container implementation provided by Microsoft.
 
-To use it just add test in your API project with structure as provided in example.
+To utilize the library, you may add a test to your API project using the structure provided in the example.
 
-First, we instantiate generic ```RegistrationValidator``` where generic type parameter is entry point into your application such as ```Program```.
-Next we call ```Validate``` method and provide types to be tested. ```RegitrationValidator``` scans assemblies for definitions of the types provided.  It currently supports concrete types, and open generic interface definitions. If you are using MediatR to dispatch commands/events then you can specify open generic interaces for the types such as ```IRequest<>``` or ```INotificationHandler<>``` for example.            
+First, create an instance of the generic ```RegistrationValidator```, where the generic type parameter is the entry point for your application (e.g. Program). Then, call the ```Validate``` method and provide the types to be tested. The ```RegistrationValidator``` will scan the assemblies for definitions of the specified types, including concrete types and open generic interface definitions. For example, if you are using MediatR to dispatch commands or events, you may specify open generic interfaces such as ```IRequest<>``` or ```INotificationHandler<>```. Note that ```Controller`` type will always be scanned for.
 
-```WebApplicationFactory``` is used to start application bootstrapping process that configures ```ServiceCollection```. In order to stop the app from running, 2 exceptions must be handled (```FailureException``` and ```SuccessException```). When ```SuccessException``` is thrown we just ignore it and optionaly provide some feedback by calling ```Result.ToString()``` and write it to output console. In case of ```FailureException```, we call ```Assert.Failure``` (this works for both XUnit and NUnit), which causes test to fail and then we call ```Result.ToString()``` to display failures.  If you wish to have different output format, you can provide extension for ```Result``` type.
+The ```WebApplicationFactory``` is used to initiate the bootstrapping process for the application, which configures the ```ServiceCollection```. To prevent the app from running, it is necessary to handle two exceptions: ```FailureException``` and ```SuccessException```. When the ```SuccessException``` is thrown, it can be safely ignored, and optional feedback can be provided by calling ```Result.ToString()``` and writing it to the output console. In the event of a ```FailureException```, the test will fail when you call ```Assert.Failure``` (which works for both XUnit and NUnit). You can then call ```Result.ToString()``` to display the failures. If you desire a different output format, you may create an extension for the ```Result``` type.
 
 
 ### Example
@@ -51,7 +50,7 @@ public class ServicesConfigurationTest
         try
         {
             verifier.Validate(
-                typeof(Controller),
+                // typeof(Controller), 
                 typeof(IHandleCommand<>));
         }
         catch (FailureException fe)
