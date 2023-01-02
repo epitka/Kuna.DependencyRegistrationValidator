@@ -1,20 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.AspNetCore.TestHost;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Kuna.Extensions.DependencyInjection.Validation.Exceptions;
+using Kuna.Extensions.DependencyInjection.Validation.Model;
 
-namespace Kuna.DependencyRegistrationValidator;
+namespace Kuna.Extensions.DependencyInjection.Validation;
 
-public class DependencyRegistrationVerifier<TProgram>
+public class RegistrationValidator<TProgram>
     where TProgram : class
 {
     private readonly IEnumerable<Assembly> assemblies;
 
-    public DependencyRegistrationVerifier(IEnumerable<Assembly> assemblies)
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="assemblies">assemblies to validate</param>
+    public RegistrationValidator(IEnumerable<Assembly> assemblies)
     {
         this.assemblies = assemblies;
     }
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="typesToVerify">Types to verify if all dependencies needed to create them are registered. Concrete types of open generic interfaces are supported. Controllers will be added automatically.</param>
+    /// <exception cref="FailureException">thrown if any of the types cannot be resolved from container. It must be handled in the unit test.</exception>
+    /// <exception cref="SuccessException">thrown if all types could be resolved from container. It must be handled in the unit test. </exception>
     public void Validate(params Type[] typesToVerify)
     {
         var app = new WebApplicationFactory<TProgram>()

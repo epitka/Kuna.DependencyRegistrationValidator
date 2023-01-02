@@ -1,4 +1,4 @@
-﻿namespace Kuna.DependencyRegistrationValidator;
+﻿namespace Kuna.Extensions.DependencyInjection.Validation.Model;
 
 public class Result
 {

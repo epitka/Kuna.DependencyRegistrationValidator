@@ -3,3 +3,7 @@ global using System.Collections.Generic;
 global using System.Reflection;
 global using System.Linq;
 global using System.Text;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Microsoft.AspNetCore.TestHost;
+global using Microsoft.Extensions.DependencyInjection;
