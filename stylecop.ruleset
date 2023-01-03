@@ -12,6 +12,8 @@
     <Rule Id="SA1118" Action="None"/>
 	<Rule Id="SA1602" Action="None"/>
 	<Rule Id="CS0618" Action="None"/>
+    <Rule Id="CS7035" Action="None"/>
+
   </Rules>
 
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers.ReadabilityRules">
