@@ -50,7 +50,7 @@ public class ServicesConfigurationTest
         try
         {
             verifier.Validate(
-                typeof(Controller), 
+                typeof(Controller),
                 typeof(IHandleCommand<>));
         }
         catch (FailureException fe)
@@ -61,8 +61,6 @@ public class ServicesConfigurationTest
         }
         catch (SuccessException e)
         {
-            // short cut app bootstrap process
-            // ignore
             this.console.WriteLine(e.Result.ToString());
         }
     }
